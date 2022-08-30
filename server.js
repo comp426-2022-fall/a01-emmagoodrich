@@ -35,7 +35,7 @@ const fs = require('fs');
 const args = require('minimist')(process.argv.slice(2));
 args.port; 
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 5555
 
 process.on('uncaughtException', err => {
   console.error('There was an uncaught error', err);
