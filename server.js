@@ -35,7 +35,12 @@ const fs = require('fs');
 const args = require('minimist')(process.argv.slice(2));
 args.port; 
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
+
+process.on('uncaughtException', err => {
+  console.error('There was an uncaught error', err);
+  process.exit(1);
+});
 
 fs.readFile('./public/index.html', 'utf8', (err, data) => {
   if (err) {
