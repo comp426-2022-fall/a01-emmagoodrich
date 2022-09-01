@@ -32,10 +32,12 @@ const http = require('http');
 
 const fs = require('fs');
 
+const port = process.env.PORT || 3000
+
 const args = require('minimist')(process.argv.slice(2));
 args.port; 
 
-const port = process.env.PORT || 5555
+
 
 process.on('uncaughtException', err => {
   console.error('There was an uncaught error', err);
